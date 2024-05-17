@@ -1,2 +1,2 @@
 # projecto_tarefas
-Projecto de avaliaç
+Projecto de avaliação
