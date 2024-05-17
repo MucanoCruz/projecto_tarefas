@@ -20,11 +20,11 @@
                             <a href="{{ url_for('index') }}" class="navbar-item">
                                 Home
                             </a>
-                            <a href="{{ url_for('profile') }}" class="navbar-item">
-                                Profile
-                            </a>
                             <a href="{{ url_for('login') }}" class="navbar-item">
                                 Login
+                            </a>
+                            <a href="{{ url_for('tarefa') }}" class="navbar-item">
+                                Tarefas
                             </a>
                             <a href="{{ url_for('signup') }}" class="navbar-item">
                                 Sign Up
@@ -40,8 +40,8 @@
 
         <div class="hero-body">
             <div class="container has-text-centered">
-               {% block content %}
-               {% endblock %}
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
     </section>

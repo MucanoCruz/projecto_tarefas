@@ -16,6 +16,37 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/tarefa')
+def tarefa():
+    return render_template('tarefa.html')
+
+
+@app.route('/tarefa', methods=['POST'])
+def tarefa_post():
+    titulo = request.form.get('titulo')
+    descricao = request.form.get('descricao')
+    tarefa = TarefaModel(titulo, descricao, 1, 1)
+    db.session.add(tarefa)
+    db.session.commit()
+    return {"message": f"tarefa {tarefa.titulo} criada com sucesso."}
+    # return render_template('tarefa.html')
+
+##################### PARTILHAR TAREFA #################### 
+@app.route('/partilhar_tarefa')
+def tarefa():
+    return render_template('partilhar_tarefa.html')
+
+
+@app.route('/partilhar_tarefa', methods=['POST'])
+def tarefa_post():
+    titulo = request.form.get('titulo')
+    descricao = request.form.get('descricao')
+    tarefa = TarefaModel(titulo, descricao, 1, 1)
+    db.session.add(tarefa)
+    db.session.commit()
+    return {"message": f"tarefa {tarefa.titulo} criada com sucesso."}
+    # return render_template('tarefa.html')
+
 @app.route('/profile')
 def profile():
     return 'Profile'
@@ -115,3 +146,4 @@ student_course = db.Table(
     db.Column('tarefa_id', db.Integer, db.ForeignKey('tarefas.id')),
     db.Column('usuario_id', db.Integer, db.ForeignKey('usuarios.id'))
 )
+
